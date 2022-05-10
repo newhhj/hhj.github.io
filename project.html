@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Our Gallery</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/ie-support/html5.js"></script>
+    <script src="js/ie-support/respond.js"></script>
+    <![endif]-->
+
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .box {
+        position: relative;
+        transition: .5s ease; /* 필수는 아님 */
+    }
+
+    .text {
+        position: absolute;
+        visibility: hidden;
+        color: white;
+        font-size: 25px;
+        font-family: verdana, sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .box:hover {
+        opacity: 0.7;
+    }
+
+        .box:hover .text {
+            visibility: visible;
+        }
+
+        .box:hover .btn {
+            visibility: visible;
+        }
+
+    button.btn {
+        position: absolute;
+        top: 60%;
+        left: 25%;
+        visibility: hidden;
+        border: 0;
+        outline: none;
+        font-size: 15px;
+        margin: 15px;
+        background: black;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+        button.btn:hover {
+            color: white;
+            background: orange;
+        }
+
+    button.btn2 {
+        position: absolute;
+        top: 85px;
+        left: 95px;
+    }
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+    }
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    h1 {
+        margin: 0;
+        padding: 5px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .modal_text {
+        padding: 16px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+<body>
+
+    <div id="site-content">
+        <header class="site-header">
+            <div class="container">
+
+                <nav class="main-navigation">
+                    <button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+                    <ul class="menu">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
+                        <li class="menu-item"><a href="about.html">About</a></li>
+                        <li class="menu-item current-menu-item"><a href="project.html">Project</a></li>
+                        <li class="menu-item"><a href="https://hhj0.tistory.com/" target="_blank">Blog</a></li>
+                    </ul> <!-- .menu -->
+                </nav> <!-- .main-navigation -->
+                <div class="mobile-menu"></div>
+            </div>
+        </header> <!-- .site-header -->
+
+        <main class="main-content">
+            <div class="fullwidth-block gallery gallerylist">
+                <div class="container">
+                    <div class="content fullwidth">
+                        <h2 class="entry-title">Project</h2>
+                        <div class="filter-links filterable-nav">
+                            <select class="mobile-filter">
+                                <option value="*">Show all</option>
+                                <option value=".web">web</option>
+                                <option value=".app">app</option>
+                                <option value=".etc">etc</option>
+                            </select>
+                            <a href="#" class="current" data-filter="*">Show all</a>
+                            <a href="#" data-filter=".web">Web</a>
+                            <a href="#" data-filter=".app">App</a>
+                            <a href="#" data-filter=".etc">Etc</a>
+                        </div>
+                        <div class="filterable-items">
+                            <div class="filterable-item web">
+                                <figure>
+                                    <div class="box">
+                                        <img src="dummy/large-gallery/gallery-1.jpg">
+                                        <button class="btn">더보기</button>
+
+                                        <div class="text"> 책 소개 홈페이지 </div>
+                                    </div>
+                                </figure>
+
+                            </div>
+                            <div class="filterable-item app">
+
+                                <figure>
+                                    <div class="box">
+                                        <img src="dummy/large-gallery/gallery-2.jpg">
+                                        
+                                        <button class="btn">더보기</button>
+
+                                        <div class="text">
+                                             <span style="color:purple">OCR을 이용한 단어장 앱</span>
+                                        </div>
+                                  
+
+                                    </div>
+                                </figure>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .testimonial-section -->
+            <div class="modal">
+
+                <!-- 첫 번째 Modal의 내용 -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img src="dummy/large-gallery/gallery-1.jpg">
+                    <h1>책 소개 반응형 웹</h1>
+                    <p>책 소개를 위한 반응형 웹입니다. 각 사용자가 자신이 추천하고자 하는 책을 추천할 수 있습니다.</p>
+                    <button type="button" onclick="window.open('https://hhj0.tistory.com/2')"> 자세히 보기 </button>
+                </div>
+
+
+
+
+        </main> <!-- .main-content -->
+        <div class="modal">
+
+            <!-- 두 번째 Modal의 내용 -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="dummy/large-gallery/gallery-2.jpg">
+                <h1>OCR을 이용한 단어장 앱</h1>
+                <p>OCR(문자 인식)을 이용하여 단어를 카메라로 읽고, 그 단어를 단어장에 넣어 공부할 수 있게 만들어주는 모바일 앱입니다. 어학 학습을 위하여 시험 기능과 내 단어장 기능이 포함되어 있습니다.</p>
+                <button type="button" onclick="window.open('https://www.youtube.com/watch?v=xilN1E6iTEk')"> 자세히 보기 </button>
+            </div>
+        </div>
+
+
+        </div>
+        <footer class="site-footer">
+            <div class="container">
+
+
+                <p class="copy">조호현의 포트폴리오 입니다</p>
+            </div>
+        
+        </footer> <!-- .site-footer -->
+
+
+    </div> <!-- #site-content -->
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+	<!--
+            // Modal을 가져옵니다.
+            var modals = document.getElementsByClassName("modal");
+            // Modal을 띄우는 클래스 이름을 가져옵니다.
+            var btns = document.getElementsByClassName("btn");
+            // Modal을 닫는 close 클래스를 가져옵니다.
+            var spanes = document.getElementsByClassName("close");
+            var funcs = [];
+
+            // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
+            function Modal(num) {
+                return function () {
+                    // 해당 클래스의 내용을 클릭하면 Modal을 띄웁니다.
+                    btns[num].onclick = function () {
+                        modals[num].style.display = "block";
+                        console.log(num);
+                    };
+
+                    // <span> 태그(X 버튼)를 클릭하면 Modal이 닫습니다.
+                    spanes[num].onclick = function () {
+                        modals[num].style.display = "none";
+                    };
+                };
+            }
+
+            // 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
+            for (var i = 0; i < btns.length; i++) {
+                funcs[i] = Modal(i);
+            }
+
+            // 원하는 Modal 수만큼 funcs 함수를 호출합니다.
+            for (var j = 0; j < btns.length; j++) {
+                funcs[j]();
+            }
+
+            // Modal 영역 밖을 클릭하면 Modal을 닫습니다.
+            window.onclick = function (event) {
+                if (event.target.className == "modal") {
+                    event.target.style.display = "none";
+                }
+            };
+
+    </script>
+
+</body>
+
+</html>
